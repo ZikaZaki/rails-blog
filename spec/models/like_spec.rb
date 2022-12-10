@@ -8,8 +8,8 @@ RSpec.describe Like, type: :model do
     @like = Like.new(user: @user, post: @post)
   end
 
-  it 'test update_likes_counter' do
-    @like.update_likes_counter
+  it 'test update_like_counter' do
+    @like.update_like_counter
     expect(@post.likes_counter).to eq 1
   end
 end
