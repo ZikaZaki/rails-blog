@@ -1,6 +1,8 @@
 require 'rails_helper'
 RSpec.describe Post, type: :model do
-  subject { Post.new(title: 'Hello', content: 'I am ZikaZaki and this is my first post', comments_counter: 8, likes_counter: 15) }
+  subject do
+    Post.new(title: 'Hello', content: 'I am ZikaZaki and this is my first post', comments_counter: 8, likes_counter: 15)
+  end
   before { subject.save }
 
   before :all do
