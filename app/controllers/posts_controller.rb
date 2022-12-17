@@ -19,18 +19,32 @@ class PostsController < ApplicationController
 
   # POST /posts
   # POST /posts.json
+  # def create
+  #   @post = Post.new(post_params)
+  #   @post.user = current_user
+
+  #   respond_to do |format|
+  #     if @post.save
+  #       format.html { redirect_to @post, notice: 'Post was successfully created.' }
+  #       format.json { render :show, status: :created, location: @post }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @post.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
+
   def create
     @post = Post.new(post_params)
+    current_user.posts_counter += 1
+    current_user.save
     @post.user = current_user
-
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
-      else
-        format.html { render :new }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    @post.comments_counter = 0
+    @post.likes_counter = 0
+    if @post.save
+      redirect_to "/users/#{current_user.id}/posts"
+    else
+      render :new
     end
   end
 
@@ -70,7 +84,8 @@ class PostsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
-    params.require(:new_post).permit(:title, :content, :user_id)
+    # params.require(:new_post).permit(:title, :content, :user_id)
+    params.require(:new_post).permit(:title, :content)
   end
 
   def require_same_user
