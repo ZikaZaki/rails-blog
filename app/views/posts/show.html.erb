@@ -22,3 +22,12 @@
         <% end %>
     </div>
 </div>
+
+<div>
+    <button class="btn btn-secondary">
+        <%= link_to "Add New Comment", new_comment_path(@post.user.id) %>
+    </button>
+    <%= form_with  url: like_post_path, method: :post, local: true do |f| %>
+        <%= f.submit "Like Post" %>
+    <% end %>
+</div>
