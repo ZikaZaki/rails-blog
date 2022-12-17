@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-#   before_action :set_post, only: [:show, :edit, :update, :destroy]
-#   before_action :require_user, except: [:index, :show]
-#   before_action :require_same_user, only: [:edit, :update, :destroy]
+  #   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  #   before_action :require_user, except: [:index, :show]
+  #   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
@@ -11,8 +11,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   # GET /posts/1.json
-  def show
-  end
+  def show; end
 
   # GET /posts/new
   def new
@@ -20,8 +19,7 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /posts
   # POST /posts.json
@@ -77,9 +75,9 @@ class PostsController < ApplicationController
   end
 
   def require_same_user
-    if current_user != @post.user
-      flash[:danger] = 'You can only edit or delete your own posts'
-      redirect_to root_path
-    end
+    return unless current_user != @post.user
+
+    flash[:danger] = 'You can only edit or delete your own posts'
+    redirect_to root_path
   end
 end
