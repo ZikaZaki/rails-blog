@@ -6,13 +6,11 @@ class PostsController < ApplicationController
     @posts = @user.posts
   end
 
+  # GET /posts/1
+  # GET /posts/1.json
   def show
     @post = Post.find_by(id: params[:post_id])
   end
-
-  # GET /posts/1
-  # GET /posts/1.json
-  def show; end
 
   # GET /posts/new
   def new
