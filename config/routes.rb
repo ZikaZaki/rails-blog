@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get "users/:id/posts/:post_id", to: "posts#show"
   get "users/:id/posts/:post_id/new_comment", to: "comments#new", as: 'new_comment'
   get "users/:id/posts/:post_id/create", to: "comments#create", as: 'create_comment'
-  get "users/:id/posts/:post_id/likes", to: "likes#create", as: 'like_post'
+  get "users/:id/posts/:post_id/create_like", to: "likes#create", as: 'create_like'
   # Defines the root path route ("/")
   # root "articles#index"
 end
