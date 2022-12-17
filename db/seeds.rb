@@ -12,11 +12,11 @@ Comment.destroy_all
 Like.destroy_all
 
 users = User.create([
-    { name: "user1", photo: "https://i.imgur.com/1ZQZ1Zm.jpg", bio: "I am user1", posts_counter: 0 },
-    { name: "user2", photo: "https://i.imgur.com/1ZQZ1Zm.jpg", bio: "I am user2", posts_counter: 0 },
-    { name: "user3", photo: "https://i.imgur.com/1ZQZ1Zm.jpg", bio: "I am user3", posts_counter: 0 },
-    { name: "user4", photo: "https://i.imgur.com/1ZQZ1Zm.jpg", bio: "I am user4", posts_counter: 0 },
-    { name: "user5", photo: "https://i.imgur.com/1ZQZ1Zm.jpg", bio: "I am user5", posts_counter: 0 }
+    { name: "user1", photo: "https://thispersondoesnotexist.com/image", bio: "I am user1", posts_counter: 0 },
+    { name: "user2", photo: "https://thispersondoesnotexist.com/image", bio: "I am user2", posts_counter: 0 },
+    { name: "user3", photo: "https://thispersondoesnotexist.com/image", bio: "I am user3", posts_counter: 0 },
+    { name: "user4", photo: "https://thispersondoesnotexist.com/image", bio: "I am user4", posts_counter: 0 },
+    { name: "user5", photo: "https://thispersondoesnotexist.com/image", bio: "I am user5", posts_counter: 0 }
 ])
 
 posts = Post.create([
