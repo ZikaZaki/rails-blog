@@ -14,11 +14,8 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
-    @post = Post.new
+    @new_post = Post.new
   end
-
-  # GET /posts/1/edit
-  def edit; end
 
   # POST /posts
   # POST /posts.json
@@ -36,6 +33,9 @@ class PostsController < ApplicationController
       end
     end
   end
+
+  # GET /posts/1/edit
+  def edit; end
 
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
@@ -70,7 +70,7 @@ class PostsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
-    params.require(:post).permit(:title, :description, :user_id)
+    params.require(:new_post).permit(:title, :content, :user_id)
   end
 
   def require_same_user
