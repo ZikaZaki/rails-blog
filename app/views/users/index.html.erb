@@ -3,7 +3,7 @@
 
 <% @users.each do |user| %>
 <!-- %= link_to "Show user", show_user_path, class: "blist-group-item list-group-item-action list-group-item-light border card mb-2" do %-->
-<a href="#" class="blist-group-item list-group-item-action list-group-item-light border card mb-2">
+<a href="/users/<%= user.id %>" class="blist-group-item list-group-item-action list-group-item-light border card mb-2">
      <div class="d-flex row">
     <div class="d-flex col-md-2">
         <%= image_tag user.photo, class: "img-thumbnail rounded" %>
@@ -15,6 +15,6 @@
       </div>
     </div>
   </div>
-  </a>
+</a>
 <!-- % end % -->
  <% end %>

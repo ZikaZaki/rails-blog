@@ -1,7 +1,7 @@
-<a href="#" class="blist-group-item list-group-item-action list-group-item-light border card mb-2">
+<div class="blist-group-item list-group-item-action list-group-item-light border card mb-2">
      <div class="d-flex row">
     <div class="d-flex col-md-2">
-        <%= image_tag @user.photo, class: "img-thumbnail rounded" %>
+        <img src=<%= @user.photo %> class="img-thumbnail rounded" alt="User Photo" />
     </div>
     <div class="d-flex align-items-center col-md-8">
       <div class="card-body align-items-center">
@@ -10,12 +10,34 @@
       </div>
     </div>
   </div>
-</a>
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+</div>
+<div class="card mb-2">
+  <div class="card-header">
+    <h5 class="card-title">Bio</h5>
   </div>
+  <div class="card-body">
+    <p class="card-text"><%= @user.bio %></p>
+  </div>
+</div>
+
+<% @posts.each_with_index do |post, index| %>
+        <div class="card mb-2">
+            <div class="card-header">
+              <a href="/users/<%= @user.id %>/posts/<%= post.id %>" class="card-title">
+                <h5 class="card-title"><%= post.title %> #<%= index %></h5>
+            </a>
+            </div>
+            <div class="card-body">
+                <p class="card-text"><%= post.content %></p>
+            </div>
+            <p class="card-text d-flex justify-content-end ">
+                <small class="text-muted">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></small>
+            </p>
+        </div>
+    
+<% end %>
+<div class="d-flex justify-content-center mb-2">
+    <button>
+        Pagination
+    </button>
 </div>
