@@ -17,28 +17,11 @@ class PostsController < ApplicationController
     @new_post = Post.new
   end
 
-  # POST /posts
-  # POST /posts.json
-  # def create
-  #   @post = Post.new(post_params)
-  #   @post.user = current_user
-
-  #   respond_to do |format|
-  #     if @post.save
-  #       format.html { redirect_to @post, notice: 'Post was successfully created.' }
-  #       format.json { render :show, status: :created, location: @post }
-  #     else
-  #       format.html { render :new }
-  #       format.json { render json: @post.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
-
   def create
     @post = Post.new(post_params)
     current_user.posts_counter += 1
     current_user.save
-    @post.user = current_user
+    @post.author = current_user
     @post.comments_counter = 0
     @post.likes_counter = 0
     if @post.save
@@ -89,7 +72,7 @@ class PostsController < ApplicationController
   end
 
   def require_same_user
-    return unless current_user != @post.user
+    return unless current_user != @post.author
 
     flash[:danger] = 'You can only edit or delete your own posts'
     redirect_to root_path

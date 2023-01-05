@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(post_params)
-    @comment.user = current_user
+    @comment.author = current_user
     p 'Hi ZikaZaki'
     current_post = Post.find_by(id: params[:post_id])
     p current_post
