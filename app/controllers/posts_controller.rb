@@ -34,7 +34,7 @@ class PostsController < ApplicationController
 
     current_post.destroy
 
-    user_post_counter = User.find_by(id: params[:id]).posts_counter
+    user_post_counter = User.find_by(id: params[:id])
     user_post_counter.posts_counter -= 1
     user_post_counter.save
 
