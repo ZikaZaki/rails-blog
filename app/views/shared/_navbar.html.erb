@@ -30,10 +30,20 @@
           <a class="nav-link disabled">Disabled</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <% if user_signed_in? %>
+        <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-outline-primary m-2" %>
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-outline-primary m-2" %>
+      <% else %>
+        <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-outline-primary m-2" %>
+        <%= link_to "Sign In", new_user_session_path, class: "btn btn-outline-primary m-2" %>
+      <% end %>
+      
+      <!--
+      <a class="btn btn-outline-primary m-2" href="#">Sign Up</a>
+      <a class="btn btn-outline-primary m-2" href="#">Sign In</a>
+      <a class="btn btn-outline-primary m-2" href="#">Sign Out</a>
+      <a class="btn btn-outline-primary m-2" href="#">Edit Profile</a>
+      -->
     </div>
   </div>
 </nav>
