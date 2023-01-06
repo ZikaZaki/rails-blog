@@ -32,8 +32,8 @@ RSpec.describe 'User show page', type: :feature do
 
     it 'display the users first post.' do
       expect(page).to have_content('test1')
-    #   expect(page).to have_content('test2')
-    #   expect(page).to have_content('test3')
+      #   expect(page).to have_content('test2')
+      #   expect(page).to have_content('test3')
     end
 
     it 'display a button that lets me view all of a users posts.' do
@@ -42,8 +42,8 @@ RSpec.describe 'User show page', type: :feature do
 
     it 'When a post is clicked, it redirects me to that posts show page.' do
       visit posts_path(id: @user.id)
-    #   click_link(@post.title)
-    #   expect(current_path).to eq user_post_path(id: @user.id, post_id: @post.id)
+      #   click_link(@post.title)
+      #   expect(current_path).to eq user_post_path(id: @user.id, post_id: @post.id)
     end
 
     it 'When See All Posts button clicked, it redirects me to the users posts index page.' do
