@@ -80,3 +80,4 @@ group :test do
 end
 
 gem 'bullet', '~> 7.0'
+gem 'devise', '~> 4.8', '>= 4.8.1'
