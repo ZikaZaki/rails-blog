@@ -6,7 +6,7 @@
     <div class="d-flex align-items-center col-md-8">
       <div class="card-body align-items-center">
         <h2 class="card-title"><%= @user.name %></h2>
-        <p class="card-text d-flex justify-content-end "><small class="text-muted">Number of posts: <%= @user.posts_counter%></small></p>
+        <p class="card-text d-flex justify-content-end "><small class="text-muted">Number of posts: <%= @user.posts_counter %></small></p>
       </div>
     </div>
   </div>
@@ -38,7 +38,7 @@
         <div class="card-body">
             <% post.retrieve_recent_comments.each do |comment| %>
                 <p class="card-text">
-                    <%= comment.user.name %>: <%= comment.content %>
+                    <%= comment.author.name %>: <%= comment.content %>
                 </p>
             <% end %>
         </div>
