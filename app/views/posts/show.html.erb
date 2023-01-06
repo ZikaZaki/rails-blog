@@ -15,8 +15,7 @@
 
 <div class="card mb-3">
     <div class="card-body">
-        <!-- % @post.retrieve_recent_comments.includes([:author]).each do |comment| % -->
-        <% @post.retrieve_recent_comments.each do |comment| %>
+        <% @post.retrieve_recent_comments.includes([:author]).each do |comment| %>
             <p class="card-text">
                 <%= comment.author.name %>: <%= comment.content %>
             </p>
