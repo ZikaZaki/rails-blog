@@ -25,6 +25,22 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    current_post = Post.find_by(id: params[:post_id])
+    authorize! :destroy, current_post
+
+    current_post.comments.each(&:destroy)
+    current_post.likes.each(&:destroy)
+
+    current_post.destroy
+
+    user_post_counter = User.find_by(id: params[:id]).posts_counter
+    user_post_counter.posts_counter -= 1
+    user_post_counter.save
+
+    redirect_to posts_path(id: params[:id])
+  end
+
   private
 
   # Never trust parameters from the scary internet, only allow the white list through.
