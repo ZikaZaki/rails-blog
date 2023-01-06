@@ -8,13 +8,13 @@ RSpec.describe Post, type: :model do
   before :all do
     @user = User.new(name: 'ZikaZaki', photo: 'https://i.imgur.com/1ZQZ1Zm.jpg',
                      bio: 'Full Stack Web Developer', posts_counter: 0)
-    @post = Post.new(user: @user, title: 'ZikaZaki first post', content: 'this post is for testing only',
+    @post = Post.new(author: @user, title: 'ZikaZaki first post', content: 'this post is for testing only',
                      comments_counter: 0, likes_counter: 0)
-    @comment1 = Comment.create(content: 'c1', user: @user, post: @post)
-    @comment2 = Comment.create(content: 'c2', user: @user, post: @post)
-    @comment3 = Comment.create(content: 'c3', user: @user, post: @post)
-    @comment4 = Comment.create(content: 'c4', user: @user, post: @post)
-    @comment5 = Comment.create(content: 'c5', user: @user, post: @post)
+    @comment1 = Comment.create(content: 'c1', author: @user, post: @post)
+    @comment2 = Comment.create(content: 'c2', author: @user, post: @post)
+    @comment3 = Comment.create(content: 'c3', author: @user, post: @post)
+    @comment4 = Comment.create(content: 'c4', author: @user, post: @post)
+    @comment5 = Comment.create(content: 'c5', author: @user, post: @post)
   end
 
   it 'test retrieve_recent_comments' do

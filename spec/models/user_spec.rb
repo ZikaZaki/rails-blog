@@ -7,9 +7,9 @@ RSpec.describe User, type: :model do
   before :all do
     @user1 = User.create(name: 'ZikaZaki', photo: 'https://i.imgur.com/1ZQZ1Zm.jpg', bio: 'Full Stack develoepr',
                          posts_counter: 0)
-    @post1 = Post.create(title: 'post1', content: 'I am post1', user: @user1, comments_counter: 0, likes_counter: 0)
-    @post2 = Post.create(title: 'post2', content: 'I am post2', user: @user1, comments_counter: 0, likes_counter: 0)
-    @post3 = Post.create(title: 'post3', content: 'I am post3', user: @user1, comments_counter: 0, likes_counter: 0)
+    @post1 = Post.create(title: 'post1', content: 'I am post1', author: @user1, comments_counter: 0, likes_counter: 0)
+    @post2 = Post.create(title: 'post2', content: 'I am post2', author: @user1, comments_counter: 0, likes_counter: 0)
+    @post3 = Post.create(title: 'post3', content: 'I am post3', author: @user1, comments_counter: 0, likes_counter: 0)
   end
 
   it 'is valid with valid attributes' do
