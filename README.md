@@ -227,7 +227,13 @@ Example:
 
 - GitHub: [ZikaZaki](https://github.com/ZikaZaki)
 - Twitter: [Zakariya Al-Khamisi](https://twitter.com/ZakariyaKhamisi)
-- LinkedIn: [Zakariya Al-Khamisi](https://www.linkedin.com/in/zakariyaalkhamisisap/)
+- LinkedIn: [Zakariya Al-Khamisi](https://www.linkedin.com/in/zackops/)
+
+👤 **Eva Lavinia Bucur ([Eva](https://github.com/BucurEva87))**
+
+- GitHub: [Eva](https://github.com/BucurEva87)
+- Twitter: [Eva Lavinia Bucur](https://twitter.com/BucurEva)
+- LinkedIn: [Eva Lavinia Bucur](https://www.linkedin.com/in/eva-lavinia-bucur/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
