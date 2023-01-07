@@ -204,6 +204,12 @@ Example:
 - Twitter: [Eva Lavinia Bucur](https://twitter.com/BucurEva)
 - LinkedIn: [Eva Lavinia Bucur](https://www.linkedin.com/in/eva-lavinia-bucur/)
 
+👤 **Marvellous Ibironke**
+
+- GitHub: [@Tommy Marvel](https://github.com/Tommymarvel)
+- Twitter: [@Tomiwa Ibironke](https://twitter.com/tomiwa_ibironke)
+- LinkedIn: [Marvellous Ibironke](https://www.linkedin.com/in/marvellous-ibironke/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
