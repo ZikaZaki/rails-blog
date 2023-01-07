@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.includes(:posts).find_by(id: params[:id])
   end
@@ -24,7 +26,6 @@ class PostsController < ApplicationController
       render :new
     end
   end
-
   def destroy
     current_post = Post.find_by(id: params[:post_id])
     authorize! :destroy, current_post
