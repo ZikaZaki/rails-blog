@@ -3,20 +3,20 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def show
-    @user = User.find_by(id: params[:id])
-    @posts = @user.retrieve_recent_posts
-    respond_to do |format|
-      format.html
-      format.json do
-        if current_user.id == params[:id].to_i
-          render json: @user.posts
-        else
-          render html: "You don't have permission to see this page"
-        end
-      end
-    end
-  end
+  # def show
+  #   @user = User.find_by(id: params[:id])
+  #   @posts = @user.retrieve_recent_posts
+  #   respond_to do |format|
+  #     format.html
+  #     format.json do
+  #       if current_user.id == params[:id].to_i
+  #         render json: @user.posts
+  #       else
+  #         render html: "You don't have permission to see this page"
+  #       end
+  #     end
+  #   end
+  # end
 
   def new
     @user = User.new
