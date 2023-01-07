@@ -26,6 +26,7 @@ class PostsController < ApplicationController
       render :new
     end
   end
+
   def destroy
     current_post = Post.find_by(id: params[:post_id])
     authorize! :destroy, current_post
