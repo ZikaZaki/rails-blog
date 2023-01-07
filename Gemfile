@@ -83,3 +83,4 @@ gem 'bullet', '~> 7.0'
 gem 'cancancan'
 gem 'devise'
 gem 'ffi', github: 'ffi/ffi', submodules: true
+gem 'rswag'
