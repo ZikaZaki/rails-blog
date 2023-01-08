@@ -1,10 +1,22 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.includes(:posts).find_by(id: params[:id])
   end
 
   def show
     @post = Post.find_by(id: params[:post_id])
+    respond_to do |format|
+      format.html
+      format.json do
+        if current_user.id == params[:id].to_i
+          render json: @post.comments
+        else
+          render html: "You don't have permission to see this page"
+        end
+      end
+    end
   end
 
   def new
@@ -23,6 +35,22 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    current_post = Post.find_by(id: params[:post_id])
+    authorize! :destroy, current_post
+
+    current_post.comments.each(&:destroy)
+    current_post.likes.each(&:destroy)
+
+    current_post.destroy
+
+    user_post_counter = User.find_by(id: params[:id])
+    user_post_counter.posts_counter -= 1
+    user_post_counter.save
+
+    redirect_to posts_path(id: params[:id])
   end
 
   private

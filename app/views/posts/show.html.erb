@@ -19,6 +19,9 @@
             <p class="card-text">
                 <%= comment.author.name %>: <%= comment.content %>
             </p>
+            <% if can? :destroy, comment %>
+              <%= link_to "Delete", delete_comment_path(id: @post.author.id, post_id: @post.id, comment_id: comment.id), method: :post %>
+            <% end %>
         <% end %>
     </div>
 </div>
@@ -29,5 +32,9 @@
     </button>
     <%= form_with  url: create_like_path, method: :post, local: true do |f| %>
         <%= f.submit "Like Post" %>
+    <% end %>
+
+    <% if can? :destroy, @post %>
+      <%= link_to "Delete", delete_post_path(id: @post.author.id, post_id: @post.id), method: :delete %>
     <% end %>
 </div>
