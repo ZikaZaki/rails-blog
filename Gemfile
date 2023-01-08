@@ -84,3 +84,4 @@ gem 'cancancan'
 gem 'devise'
 gem 'ffi', github: 'ffi/ffi', submodules: true
 gem 'load_and_authorize_resource'
+gem 'rswag'

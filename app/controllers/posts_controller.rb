@@ -7,6 +7,16 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by(id: params[:post_id])
+    respond_to do |format|
+      format.html
+      format.json do
+        if current_user.id == params[:id].to_i
+          render json: @post.comments
+        else
+          render html: "You don't have permission to see this page"
+        end
+      end
+    end
   end
 
   def new
